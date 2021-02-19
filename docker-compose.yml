@@ -1,0 +1,31 @@
+version: '3'
+
+volumes:
+
+  postgres-admin: {}
+  postgres-data: {}
+
+services:
+
+  postgres:
+    image: postgres:11.5-alpine
+    restart: always
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres-data:/var/lib/postgresql
+      
+  pg-admin:
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com.br
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - 8000:80
+    volumes:
+      - postgres-admin:/var/lib/pgadmin
+
