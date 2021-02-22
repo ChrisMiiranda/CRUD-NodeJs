@@ -1,16 +1,16 @@
 const db = require("../config/database");
 
 exports.createUsuario = async (req, res) => {
-  const { usuarioid, nome, endereco, cpf, rg, date_birth } = req.body;
+  const { nome, endereco, cpf, rg, date_birth, stack } = req.body;
   const { rows } = await db.query(
-    "INSERT INTO USUARIO (usuarioid, nome, endereco, cpf, rg, date_birth) VALUES ($1, $2, $3, $4, $5, $6)" ,
-   [ usuarioid, nome, endereco, cpf, rg, date_birth ]
+    "INSERT INTO USUARIO (nome, endereco, cpf, rg, date_birth, stack) VALUES ($1, $2, $3, $4, $5, $6)" ,
+   [ nome, endereco, cpf, rg, date_birth, stack ]
   );
 
   res.status(201).send({
     message: "Usuario adicionado com sucesso!",
     body: {
-      usuario: { usuarioid, nome, endereco, cpf, rg, date_birth }
+      usuario: { nome, endereco, cpf, rg, date_birth, stack }
     },
   });
 }
@@ -40,9 +40,10 @@ exports.updateUsuarioById = async (req, res) => {
 
 exports.deleteUsuarioById = async (req, res) => {
   const usuarioId = parseInt(req.params.id);
-  await db.query('DELETE FROM usuario WHERE usuarioId = $1', [
-    usuarioId
-  ]);
+  const { excluido } = req.body;
+  await db.query('UPDATE usuario SET excluido = $1 WHERE usuarioId = $2',
+    [excluido, usuarioId]
+  );
 
   res.status(200).send({ message: 'Usuario deletado com sucesso!', usuarioId });
 }

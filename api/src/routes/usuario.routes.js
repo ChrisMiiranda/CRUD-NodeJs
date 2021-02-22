@@ -9,6 +9,6 @@ router.get('/usuarios/:id', usuarioController.findUsuarioById);
 
 router.put('/usuarios/:id', usuarioController.updateUsuarioById);
 
-router.delete('/usuarios/:id', usuarioController.deleteUsuarioById);
+router.put('/usuarios/delete/:id', usuarioController.deleteUsuarioById);
 
 module.exports = router;
