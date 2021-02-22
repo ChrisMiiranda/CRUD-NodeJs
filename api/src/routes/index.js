@@ -1,10 +1,3 @@
-/**
- * Arquivo: src/routes/index.js
- * Descrição: arquivo responsável pela chamada da Api da aplicação.
- * Data: 19/02/2021
- * Author Christopher Miranda
- */
-
 const express = require('express');
 
 const router = express.Router();

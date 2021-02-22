@@ -1,16 +1,8 @@
-/**
- * Arquivo: app.js
- * Descrição: arquivo responsável por toda a configuração da aplicação.
- * Data: 19/02/2021
- * Author: Christopher Miranda
- */
-
 const express = require('express');
 const cors = require('cors');
 
 const app = express();
 
-// ==> Rotas da API:
 const index = require('./routes/index');
 const usuarioRoute = require('./routes/usuario.routes');
 
