@@ -44,7 +44,6 @@ export class Cadastro extends Component {
         });
     }
     
-
     save() {
         var data = {
             nome: this.state.nome,
@@ -63,7 +62,6 @@ export class Cadastro extends Component {
               rg: response.data.rg,
               date_birth: response.data.date_birth,
               stack: response.data.stack,
-              create_at: Date.now(),
     
               submitted: true
             });
@@ -76,7 +74,7 @@ export class Cadastro extends Component {
 
     render() {
         return (
-            <div className="row">
+            <div className="row cadastro">
 
                 <form className="cadastro col-md-6 offset-md-3">
                     <div>
@@ -85,6 +83,7 @@ export class Cadastro extends Component {
                             <div className="input-field col s12">
 
                                 <input type="text"
+                                    class="form-control"
                                     id="nome"
                                     name="nome"
                                     value={this.state.nome}
@@ -101,6 +100,7 @@ export class Cadastro extends Component {
 
                                 <input
                                     type="text"
+                                    class="form-control"
                                     name="endereco"
                                     value={this.state.endereco}
                                     onChange={this.onChangeEndereco}
@@ -115,6 +115,7 @@ export class Cadastro extends Component {
                             <div className="input-field col s6">
 
                                 <input
+                                    class="form-control"
                                     type="text"
                                     name="cpf"
                                     value={this.state.cpf}
@@ -127,6 +128,7 @@ export class Cadastro extends Component {
                             <div className="input-field col s6">
 
                                 <input
+                                class="form-control"
                                     type="text"
                                     name="rg"
                                     value={this.state.rg}
@@ -142,6 +144,7 @@ export class Cadastro extends Component {
                             <div className="input-field col s12">
 
                                 <input
+                                    class="form-control"
                                     type="date"
                                     name="date_birth"
                                     value={this.state.date_birth}
@@ -157,6 +160,8 @@ export class Cadastro extends Component {
                             <div className="input-field col s12">
 
                                 <textarea
+                                    class="form-control"
+                                    id="stack"
                                     type="text"
                                     name="stack"
                                     value={this.state.stack}/>

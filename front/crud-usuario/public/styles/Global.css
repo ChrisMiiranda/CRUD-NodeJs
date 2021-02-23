@@ -1,0 +1,14 @@
+.form-control { 
+    min-width:296px;
+}
+
+#stack {
+    margin-bottom: 10px;
+}
+
+.cadastro {
+    margin: 0px;
+    border: 15px;
+    
+    background-color: #DFDFDF;
+}
