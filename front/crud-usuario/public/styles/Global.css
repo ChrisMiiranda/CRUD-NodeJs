@@ -1,3 +1,7 @@
+.navbar {
+    text-decoration: underline;
+}
+
 .form-control { 
     min-width:296px;
 }
@@ -6,9 +10,57 @@
     margin-bottom: 10px;
 }
 
-.cadastro {
-    margin: 0px;
-    border: 15px;
-    
+.cadastro {    
+    height: 470px;
     background-color: #DFDFDF;
+    margin-bottom: 5px;
+}
+
+.coluna-1 {
+    padding-bottom: 30px;
+}
+
+.coluna-2 {
+    border-left: 1px solid;
+    height: 90px;
+}
+
+.lista {
+    width: 100%;
+}
+
+li.usuario {
+    margin-bottom: 35px;
+    width: 100%;
+    background-color: #DFDFDF;
+}
+
+.dados {
+    margin-bottom: 0px;
+    padding-left: 35px;
+}
+
+#birth {
+    max-width: 117px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.botao-del {
+    width: 50%;
+    padding-right: 30px;
+    padding-left: 35px;
+    padding-top: 20px;
+    border-top: 1px solid #2E3B5C;
+}
+
+.botao-alt {
+    padding-top: 20px;
+    padding-right: 35px;
+    border-top: 1px solid #2E3B5C;
+    width: 50%;
+}
+
+.botao-save {
+    padding-top: 10px;
 }

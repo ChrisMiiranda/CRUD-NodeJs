@@ -13,8 +13,8 @@ function App() {
         <br/>
       </div>
       <Switch>
-        <Route exact path="/cadastro" component={Cadastro} />
-        <Route exact path={["/","/listagem"]} component={Listagem} />
+        <Route exact path="/listagem" component={Listagem} />
+        <Route exact path={["/","/cadastro"]} component={Cadastro} />
       </Switch>
     </Router>
   );

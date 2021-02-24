@@ -11,6 +11,7 @@ export class Cadastro extends Component {
         this.onChangeRg = this.onChangeRg.bind(this);
         this.onChangeDateBirth = this.onChangeDateBirth.bind(this);
         this.onChangeStack = this.onChangeStack.bind(this);
+        this.save = this.save.bind(this);
     }
 
     onChangeNome(e) {
@@ -74,16 +75,17 @@ export class Cadastro extends Component {
 
     render() {
         return (
-            <div className="row cadastro">
+            <div className="row justify-content-center">
 
-                <form className="cadastro col-md-6 offset-md-3">
+                <form className="cadastro col-md-6">
                     <div>
                         <label htmlFor="nome">Nome</label>
                         <div className="row">
                             <div className="input-field col s12">
 
                                 <input type="text"
-                                    class="form-control"
+                                    className="form-control"
+                                    placeholder="Digite seu nome"
                                     id="nome"
                                     name="nome"
                                     value={this.state.nome}
@@ -100,7 +102,8 @@ export class Cadastro extends Component {
 
                                 <input
                                     type="text"
-                                    class="form-control"
+                                    className="form-control"
+                                    placeholder="Digite seu endereço"
                                     name="endereco"
                                     value={this.state.endereco}
                                     onChange={this.onChangeEndereco}
@@ -115,7 +118,8 @@ export class Cadastro extends Component {
                             <div className="input-field col s6">
 
                                 <input
-                                    class="form-control"
+                                    className="form-control"
+                                    placeholder="000.000.000-00"
                                     type="text"
                                     name="cpf"
                                     value={this.state.cpf}
@@ -128,7 +132,8 @@ export class Cadastro extends Component {
                             <div className="input-field col s6">
 
                                 <input
-                                class="form-control"
+                                    className="form-control"
+                                    placeholder="0.000.000"
                                     type="text"
                                     name="rg"
                                     value={this.state.rg}
@@ -144,7 +149,7 @@ export class Cadastro extends Component {
                             <div className="input-field col s12">
 
                                 <input
-                                    class="form-control"
+                                    className="form-control"
                                     type="date"
                                     name="date_birth"
                                     value={this.state.date_birth}
@@ -160,19 +165,20 @@ export class Cadastro extends Component {
                             <div className="input-field col s12">
 
                                 <textarea
-                                    class="form-control"
+                                    className="form-control"
                                     id="stack"
                                     type="text"
                                     name="stack"
-                                    value={this.state.stack}/>
+                                    value={this.state.stack}
+                                    onChange={this.onChangeStack}/>
                             </div>
                         </div>
                     </div>
 
                     <div className="row">
-                        <div className="input-field col s12">
+                        <div className="botao-save input-field col s12">
 
-                        <button onClick={this.save()} className="btn btn-success">
+                        <button onClick={this.save} className="btn btn-success btn-block">
                             salvar
                         </button>
                         </div>

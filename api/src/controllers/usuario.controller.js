@@ -16,7 +16,7 @@ exports.createUsuario = async (req, res) => {
 }
 
 exports.listAllUsuario = async (req, res) => {
-  const response = await db.query('SELECT * FROM usuario WHERE excluido = true ORDER BY nome ASC');
+  const response = await db.query('SELECT * FROM usuario WHERE excluido = false ORDER BY nome ASC');
   res.status(200).send(response.rows);
 }
 
