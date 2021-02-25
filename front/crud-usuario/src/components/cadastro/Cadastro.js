@@ -86,6 +86,7 @@ export class Cadastro extends Component {
                                 <input type="text"
                                     className="form-control"
                                     placeholder="Digite seu nome"
+                                    autocomplete="off"
                                     id="nome"
                                     name="nome"
                                     value={this.state.nome}
@@ -103,6 +104,7 @@ export class Cadastro extends Component {
                                 <input
                                     type="text"
                                     className="form-control"
+                                    autocomplete="off"
                                     placeholder="Digite seu endereço"
                                     name="endereco"
                                     value={this.state.endereco}
@@ -120,6 +122,7 @@ export class Cadastro extends Component {
                                 <input
                                     className="form-control"
                                     placeholder="000.000.000-00"
+                                    autocomplete="off"
                                     type="text"
                                     name="cpf"
                                     value={this.state.cpf}
@@ -134,6 +137,7 @@ export class Cadastro extends Component {
                                 <input
                                     className="form-control"
                                     placeholder="0.000.000"
+                                    autocomplete="off"
                                     type="text"
                                     name="rg"
                                     value={this.state.rg}

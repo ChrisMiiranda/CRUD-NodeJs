@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import ListagemDataService from "./listagemService";
+import { Link } from "react-router-dom";
+
 
 export class Listagem extends Component {
     constructor(props) {
@@ -51,8 +53,9 @@ export class Listagem extends Component {
         });
     }
 
-    removeUsuarios() {
-        ListagemDataService.delete(this.usuarios.usuarioId)
+    removeUsuarios(usuario) {
+        console.log(usuario);
+        ListagemDataService.delete(usuario.usuarioid)
             .then(response => {
                 console.log(response.data);
                 this.refreshList();
@@ -103,17 +106,17 @@ export class Listagem extends Component {
                                         <div className="botao-del">
                                             <button
                                                 className="btn btn-sm btn-danger btn-block"
-                                                onClick={this.removeUsuarios}
+                                                onClick={() => this.removeUsuarios(usuario)}
                                                 >
                                                     Deletar
                                             </button>
                                         </div>
                                         <div className="botao-alt">
-                                            <button
-                                                className="btn btn-sm btn-primary btn-block"
-                                                >
-                                                    Alterar
-                                            </button>
+                                        <Link
+                                            to={"/usuarios/" + usuario.usuarioid}
+                                            className="btn btn-sm btn-primary btn-block">
+                                                Alterar
+                                        </Link>
                                         </div>
                                     </div>
                                 </li>
