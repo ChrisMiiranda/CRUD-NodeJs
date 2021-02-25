@@ -16,7 +16,7 @@ exports.createUsuario = async (req, res) => {
 }
 
 exports.listAllUsuario = async (req, res) => {
-  const response = await db.query('SELECT * FROM usuario WHERE excluido = false ORDER BY nome ASC');
+  const response = await db.query('SELECT * FROM usuario WHERE dele_at IS NULL ORDER BY nome ASC');
   res.status(200).send(response.rows);
 }
 
@@ -41,9 +41,8 @@ exports.updateUsuarioById = async (req, res) => {
 
 exports.deleteUsuarioById = async (req, res) => {
   const usuarioId = parseInt(req.params.id);
-  const { excluido } = req.body;
-  await db.query('UPDATE usuario SET excluido = $1, dele_at = CURRENT_DATE WHERE usuarioId = $2',
-    [excluido, usuarioId]
+  await db.query('UPDATE usuario SET dele_at = CURRENT_DATE WHERE usuarioId = $1',
+    [usuarioId]
   );
 
   res.status(200).send({ message: 'Usuario deletado com sucesso!', usuarioId });
